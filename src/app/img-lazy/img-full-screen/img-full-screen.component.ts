@@ -3,7 +3,8 @@ import {
   OnInit,
   ElementRef,
   EventEmitter,
-  Output
+  Output,
+  Input
 } from '@angular/core';
 
 @Component({
@@ -14,6 +15,7 @@ import {
 export class ImgFullScreenComponent implements OnInit {
   public element;
   isFullImage: boolean = false;
+  @Input() src;
   @Output() closePopup = new EventEmitter();
   constructor(private el: ElementRef) {
     this.element = el;
