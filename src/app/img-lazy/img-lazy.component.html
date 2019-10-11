@@ -1,0 +1,16 @@
+<div class="imgWrapper">
+  <div *ngIf="!state.loaded" class="image loading"></div>
+  <figure *ngIf="state.visible">
+    <img
+      [hidden]="!state.loaded"
+      (click)="fullScreen()"
+      (load)="onLoad()"
+      [src]="src"
+      [alt]="alt"
+    />
+  </figure>
+  <app-img-full-screen
+    (closePopup)="closeFullScreen()"
+    #fullImg
+  ></app-img-full-screen>
+</div>

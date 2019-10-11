@@ -1,0 +1,42 @@
+.imgWrapper {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.image {
+  background: #e9ebee;
+  height: 175px;
+}
+
+.loading {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: '';
+    display: block;
+    background-color: #dddfe2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(0);
+    animation: 1.5s loading-placeholder ease-in-out infinite;
+  }
+}
+.imgWrapper {
+  figure {
+    img {
+      cursor: zoom-in;
+    }
+  }
+}
+@keyframes loading-placeholder {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
